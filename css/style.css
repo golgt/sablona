@@ -167,4 +167,13 @@ footer p a{
   }  
   
 }
+.answer {
+  display: none;
+  padding: 10px;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+}
 
+.answer.visible {
+  display: block;
+}
