@@ -6,6 +6,7 @@
        <?php
         generateSlides("img/banners");
        ?>
+       
       </section>
       <section class="container">
         <div class="row">
