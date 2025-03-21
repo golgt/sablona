@@ -71,12 +71,13 @@ function generateSlides($dir){
   $files = glob($dir . "/*.jpg");
   $json = file_get_contents("data.json");
   $data = json_decode($json,true);
-  $text = $data["text_bannee"];
+  $text = $data["text_banner"];
 
   foreach($files as $file) {
     echo '<div class="slide fade">';
-    echo '<img src="' . $file .'">';
+    echo '<img src="' . $file . '">';
     echo '<div class="slide-text">';
+    
     echo($text[basename($file)]);
     echo'</div>';
     echo'</div>';
@@ -93,6 +94,16 @@ function pridajPozdrav(){
     echo "<h3>Dobrý deň</h3>";
   } else {
     echo "<h3>Dobrý večer</h3>";
+  }
+}
+function getCSS(){
+  $jsonStr = file_get_contents("data.json");
+  $data = json_decode($jsonStr,true);
+  $stranka = basename($_SERVER['REQUEST_URI']);
+  $stranka = explode('.',$stranka)[0];
+  $suboryCSS = $data['stranky'][$stranka];
+  foreach($suboryCSS as $subor){
+    echo"<link rel='stylesheet' href='$subor'>";
   }
 }
 ?>

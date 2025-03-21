@@ -18,5 +18,13 @@
         "banner1.jpg": "Nadpis číslo 1",
         "banner2.jpg": "Nadpis druhý",
         "banner3.jpg": "Nadpis poradového čísla 3"
+    },
+
+    "stranky": {
+        "index":["css/style.css", "css/slider.css"],
+        "portfolio":["css/style.css", "css/banner.css", "css/portfolio.css"],
+        "qna":["css/style.css", "css/banner.css", "css/accordion.css"],
+        "Kontakt":["css/style.css", "css/banner.css", "css/form.css"]
     }
+
 }

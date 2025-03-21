@@ -27,7 +27,7 @@ for(a of accordion){
         // Vyčistíme kontajner pred načítaním
         container.innerHTML = "";
 
-        data.data.forEach(item => {
+        data.questions.forEach(item => {
           const accordion = document.createElement("div");
           accordion.classList.add("accordion");
 

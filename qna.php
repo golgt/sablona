@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="sk">
-<?php include "parts/header.php";?>
-<body>
- <?php include "parts/navbar.php"; ?>
 
+<?php include_once "parts/header.php";?>
+<?php include_once "parts/navbar.php"; ?>
+<body>
   <main>
     <section class="banner">
       <div class="container text-white">
@@ -24,8 +22,6 @@
 </section>
   </div>
   </main>
-  <?php include "parts/footer.php";?>
+  <?php include_once "parts/footer.php";?>
 <script src="js/accordion.js"></script>
 <script src="js/menu.js"></script>
-</body>
-</html>
