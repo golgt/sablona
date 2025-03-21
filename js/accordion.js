@@ -9,7 +9,7 @@ for(a of accordion){
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    fetch("questions.json")
+    fetch("data.json")
       .then(response => {
         if (!response.ok) {
           throw new Error("Chyba pri načítaní JSON: " + response.statusText);
@@ -27,7 +27,7 @@ for(a of accordion){
         // Vyčistíme kontajner pred načítaním
         container.innerHTML = "";
 
-        data.questions.forEach(item => {
+        data.data.forEach(item => {
           const accordion = document.createElement("div");
           accordion.classList.add("accordion");
 

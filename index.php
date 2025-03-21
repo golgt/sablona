@@ -1,48 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
 <?php include "parts/header.php";?>
-<body>
 <?php include "parts/navbar.php"; ?>
-    
+<body>    
     <main>
       <section class="slides-container">
-        <div class="slide fade">
-          <img src="img/banner1.jpg">
-          <div class="slide-text">
-            Prvý nadpis
-          </div>
-        </div>
-        
-        <div class="slide fade">
-          <img src="img/banner2.jpg">
-          <div class="slide-text">
-            Druhý nadpis
-          </div>
-        </div>
-        
-        <div class="slide fade">
-          <img src="img/banner3.jpg">
-          <div class="slide-text">
-            Tretí nadpis
-          </div>
-        </div>
-        
-        <a id="prev" class="prev">❮</a>
-        <a id="next" class="next">❯</a>
-        
+       <?php
+        generateSlides("img/banners");
+       ?>
       </section>
       <section class="container">
         <div class="row">
           <div class="col-100 text-center">
             <?php
-            $hour = date('H');
-            if ($hour < 12) {
-                  echo "<h3>Dobré ráno</h3>";
-                } elseif ($hour < 18) {
-                       echo "<h3>Dobrý deň</h3>";
-                      } else {
-                           echo "<h3>Dobrý večer</h3>";
-                          }
+              pridajPozdrav();
             ?>
               <p><strong><em>Elit culpa id mollit irure sit. Ex ut et ea esse culpa officia ea incididunt elit velit veniam qui. Mollit deserunt culpa incididunt laborum commodo in culpa.</em></strong></p>
           </div>

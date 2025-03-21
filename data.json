@@ -12,5 +12,11 @@
             "question": "Môžem použiť vlastný štýl?",
             "answer": "Áno, môžeš upraviť CSS súbory podľa vlastných potrieb."
         }
-    ]
+    ],
+
+    "text_banner":{
+        "banner1.jpg": "Nadpis číslo 1",
+        "banner2.jpg": "Nadpis druhý",
+        "banner3.jpg": "Nadpis poradového čísla 3"
+    }
 }
