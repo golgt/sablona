@@ -1,0 +1,22 @@
+{
+    "questions":[
+        {
+            "question": "Ako funguje tento web?",
+            "answer": "Tento web funguje na pricípe HTML, CSS, JavaScript a PHP."
+        },
+        {
+            "question": "Ako môžem pridať novú otázku?",
+            "answer": "Nové otázky môžeš pridať úpravou JSON súboru 'otazky.json'."
+        },
+        {
+            "question": "Môžem použiť vlastný štýl?",
+            "answer": "Áno, môžeš upraviť CSS súbory podľa vlastných potrieb."
+        }
+    ],
+
+    "text_banner":{
+        "banner1.jpg": "Nadpis číslo 1",
+        "banner2.jpg": "Nadpis druhý",
+        "banner3.jpg": "Nadpis poradového čísla 3"
+    }
+}
