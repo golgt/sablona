@@ -8,7 +8,7 @@ for(a of accordion){
     })
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
+ /* document.addEventListener("DOMContentLoaded", () => {
     fetch("data.json")
       .then(response => {
         if (!response.ok) {
@@ -32,19 +32,19 @@ for(a of accordion){
           accordion.classList.add("accordion");
 
           accordion.innerHTML = `
-            <div class="question">${item.question}</div>
-            <div class="answer">${item.answer}</div>
+            <div class="otazky">${item.otazky}</div>
+            <div class="odpovede">${item.odpovede}</div>
           `;
 
           container.appendChild(accordion);
         });
 
         // Event listener pre otázky
-        document.querySelectorAll(".question").forEach(q => {
+        document.querySelectorAll(".otazky").forEach(q => {
           q.addEventListener("click", () => {
             q.nextElementSibling.classList.toggle("visible");
           });
         });
       })
       .catch(error => console.error("Chyba pri spracovaní JSON:", error));
-});
+});*/

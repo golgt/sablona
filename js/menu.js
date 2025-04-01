@@ -24,4 +24,3 @@ hamburger.onclick = function() {myNav()};
 /* opäť by sa to dalo zapísať ako:
 hamburger.onclick = myNav;
 */
-

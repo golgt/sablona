@@ -15,12 +15,23 @@
         </div>
       </div>
     </section>
-    <section class="container">
-  <div class="accordion-container">
-    <!-- Otázky z JSON sa sem automaticky vložia -->
-  </div>
-</section>
-  </div>
+     <center><form id="contact" method="post" action="db/spracovanieQnA.php">
+      <input type="text" name="otazka" placeholder="Napíšte nám otázku" required> <br>
+      <textarea name="odpoved" placeholder="Napíšte odpoved" required></textarea><br>
+      <input type="submit" value="Odoslať">
+    </form></center>
+  <!--  <section class="container">
+  <div class="accordion-container">-->
+  <?php
+      include_once "classes/QnA.php";
+      use otazkyodpovede\QnA;
+
+      $qna = new QnA();
+      $qna -> vypisQnA();
+    ?>
+   
+ <!-- </div>
+</section>-->
   </main>
   <?php include_once "parts/footer.php";?>
 <script src="js/accordion.js"></script>

@@ -1,3 +1,4 @@
+
 *{
   margin:0px;
   box-sizing: border-box;
@@ -30,7 +31,7 @@ main{
 /*každý druhý section element 
 bude mať sivé pozadie*/
 main section:nth-child(even){
-  background-color: #f7f7f7;
+  background-color:var(--druhySection);
 }
 /*ŠTÝLY PRE HEADER*/
 header{
@@ -42,7 +43,7 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: white;
+  background-color:var(--header);
   z-index: 1; 
   max-width: 100%; 
 }
@@ -52,7 +53,7 @@ header{
 }
 .main-menu li a{
   text-decoration: none;
-  color:black;
+  color: var(--headerText);
 }
 .main-menu li:hover a{
  text-decoration: underline;
@@ -90,7 +91,7 @@ header{
 }
 /*FARBY TEXTOV*/
 .text-dark{
-  color:rgb(25, 25, 25);
+  color:var(--farbyTextov)
 }
 .text-white{
   color:white;
@@ -154,7 +155,7 @@ footer p a{
   .main-menu.responsive {
     display: block;
     position: absolute;
-    background-color: #f7f7f7;
+    background-color: var(--druhySection);
     width:100%;
     top:60px;
     left:0px;
@@ -167,7 +168,7 @@ footer p a{
   }  
   
 }
-/*qna*/
+/*qna
 .answer {
   display: none;
   padding: 10px;
@@ -177,4 +178,4 @@ footer p a{
 
 .answer.visible {
   display: block;
-}
+}*/

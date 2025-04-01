@@ -1,18 +1,15 @@
 {
-    "questions":[
-        {
-            "question": "Ako funguje tento web?",
-            "answer": "Tento web funguje na pricípe HTML, CSS, JavaScript a PHP."
-        },
-        {
-            "question": "Ako môžem pridať novú otázku?",
-            "answer": "Nové otázky môžeš pridať úpravou JSON súboru 'otazky.json'."
-        },
-        {
-            "question": "Môžem použiť vlastný štýl?",
-            "answer": "Áno, môžeš upraviť CSS súbory podľa vlastných potrieb."
-        }
-    ],
+    "otazky":[
+        
+         "Ako funguje tento web?",
+         "Ako môžem pridať novú otázku?",  
+         "Môžem použiť vlastný štýl?"
+        ],
+    "odpovede":[
+        "Tento web funguje na pricípe HTML, CSS, JavaScript a PHP.",
+        "Nové otázky môžeš pridať úpravou JSON súboru 'otazky.json'.",
+        "Áno, môžeš upraviť CSS súbory podľa vlastných potrieb."
+    ],    
 
     "text_banner":{
         "banner1.jpg": "Nadpis číslo 1",
@@ -23,8 +20,9 @@
     "stranky": {
         "index":["css/style.css", "css/slider.css"],
         "portfolio":["css/style.css", "css/banner.css", "css/portfolio.css"],
-        "qna":["css/style.css", "css/banner.css", "css/accordion.css"],
-        "Kontakt":["css/style.css", "css/banner.css", "css/form.css"]
+        "qna":["css/style.css", "css/banner.css", "css/accordion.css", "css/form.css"],
+        "kontakt":["css/style.css", "css/banner.css", "css/form.css"],
+        "thankyou":["css/style.css", "css/banner.css"]
     }
 
 }
