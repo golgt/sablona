@@ -4,24 +4,16 @@ namespace otazkyodpovede;
 use Exception;
 use PDOException;
 define('__ROOT__',dirname(dirname(__FILE__)));
-require_once(__ROOT__.'/db/config.php');
+require_once(__ROOT__.'/classes/Database.php');
+use Database;
 use PDO;
 
-class QnA{
-    private $conn;
+
+class QnA extends Database{
+    protected $connection;
     public function __construct(){
         $this->connect();
-    }
-    private function connect(){ 
-        $config = DATABASE;
-
-        $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,);
-        try{
-            $this ->conn = new PDO('mysql:host=' . $config['HOST'] . ';dbname=' . $config['DBNAME'] . ';port=' . $config['PORT'], $config['USER_NAME'], $config['PASSWORD'], $options);
-        } catch(PDOException $e){
-            die("Chyba pripojenia: " . $e->getMessage());
-        }
+        $this->connection = $this->getConnection();
     }
     public function insertQnA(){
         try {
@@ -29,13 +21,13 @@ class QnA{
             $otazky = $data["otazky"];
             $odpovede = $data["odpovede"];
     
-            $this->conn->beginTransaction();
+            $this->connection->beginTransaction();
     
             $check_sql = "SELECT COUNT(*) FROM qna WHERE otazka = :otazka AND odpoved = :odpoved";
             $insert_sql = "INSERT INTO qna (otazka, odpoved) VALUES (:otazka, :odpoved)";
     
-            $check_stmt = $this->conn->prepare($check_sql);
-            $insert_stmt = $this->conn->prepare($insert_sql);
+            $check_stmt = $this->connection->prepare($check_sql);
+            $insert_stmt = $this->connection->prepare($insert_sql);
     
             for ($i = 0; $i < count($otazky); $i++) {
                 $otazka = $otazky[$i];
@@ -53,10 +45,10 @@ class QnA{
                 }
             }
     
-            $this->conn->commit();
+            $this->connection->commit();
             echo "Dáta boli vložené bez duplikátov.";
         } catch (Exception $e) {
-            $this->conn->rollback();
+            $this->connection->rollback();
             echo "Chyba pri vkladaní dát do databázy: " . $e->getMessage();
         }
     }
@@ -64,7 +56,7 @@ class QnA{
     public function vypisQnA(){
         try{                                             //funkcia na vypisanie qna
             $sql = "SELECT otazka, odpoved FROM qna";
-            $statement = $this ->conn -> query($sql);
+            $statement = $this ->connection -> query($sql);
 
             echo"<ul>";
             while($row = $statement -> fetch()){
@@ -74,18 +66,18 @@ class QnA{
             echo "</ul>";
         } catch(PDOException $e){
             die("Chyba pri načítaní údajov: " . $e->getMessage());
-        } finally{ $this ->conn = null; }
+        } finally{ $this ->connection = null; }
     }
     public function ulozOtazku($otazka, $odpoved){
         $check_sql = "SELECT COUNT(*) FROM qna WHERE otazka = :otazka AND odpoved = :odpoved";  //kontrola ci existuje
-        $stmt = $this -> conn -> prepare($check_sql);
+        $stmt = $this -> connection -> prepare($check_sql);
         $stmt -> bindValue(":otazka", $otazka);                                                 
         $stmt -> bindValue(":odpoved", $odpoved);
         $stmt -> execute();
 
         if($stmt -> fetchColumn() == 0){          //ak toazka a odpoved neexistuju vllozia sa do db
             $insert_sql = "INSERT INTO qna (otazka,odpoved) VALUES (:otazka, :odpoved)";
-            $insert_stmt = $this -> conn -> prepare($insert_sql);
+            $insert_stmt = $this -> connection -> prepare($insert_sql);
             $insert_stmt -> bindValue(":otazka", $otazka);
             $insert_stmt -> bindValue(":odpoved", $odpoved);
             $insert_stmt -> execute();

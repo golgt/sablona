@@ -21,4 +21,3 @@ $menu = getMenuType("header");
       </a>
     </nav>
 </header> 
-?>
